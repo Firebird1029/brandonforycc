@@ -12,8 +12,15 @@ export default function Home() {
 				<meta name="robots" content="noindex, nofollow" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main className={styles.main}>
-				<p>hi</p>
+			<main>
+				<section className="section">
+					<div className="container">
+						<h1 className="title">Hello World</h1>
+						<p className="subtitle">
+							My first website with <strong>Bulma</strong>!
+						</p>
+					</div>
+				</section>
 			</main>
 		</>
 	);
