@@ -1,1 +1,27 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css";
+/* @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css"; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: linear-gradient(150deg, #fff, rgba(0, 50, 255, 0.4));
+}
+
+@layer components {
+	h1 {
+		@apply font-sans;
+	}
+
+	p {
+		@apply text-xl;
+	}
+}
+
+.accordion-body p:not(:last-child) {
+	margin-bottom: 2rem;
+}
