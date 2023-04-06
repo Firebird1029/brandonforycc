@@ -133,6 +133,10 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta name="robots" content="noindex, nofollow" />
 				<link rel="icon" href="/favicon.ico" />
+
+				<meta property="og:title" content="Unforgettable Yale" />
+				<meta property="og:description" content="Brandon Yee for YCC" />
+				<meta property="og:image" content="https://www.unforgettableyale.com/headshot.jpg" />
 			</Head>
 			<main>
 				<section
