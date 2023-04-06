@@ -134,7 +134,7 @@ export default function Home() {
 				<meta name="robots" content="noindex, nofollow" />
 				<link rel="icon" href="/favicon.ico" />
 
-				<meta property="og:title" content="Unforgettable Yale" />
+				<meta property="og:title" content="Unforgettable Yale: Brandon Yee for YCC" />
 				<meta property="og:description" content="Brandon Yee for YCC" />
 				<meta property="og:image" content="https://www.unforgettableyale.com/headshot.jpg" />
 			</Head>
