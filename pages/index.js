@@ -519,7 +519,7 @@ export default function Home() {
 							</p>
 							<br />
 							<a
-								className="button is-primary is-medium"
+								className="button is-primary is-large"
 								href="https://docs.google.com/forms/d/e/1FAIpQLSe5pBjdc9RmnZhSO7aXK_LAmZQJldzMurlTioRr2TwMkUyJhQ/viewform?usp=sf_link"
 								target="_blank"
 							>
