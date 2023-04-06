@@ -7,6 +7,8 @@ import { useRouter } from "next/router";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
 
+import { GoogleAnalytics } from "nextjs-google-analytics";
+
 // Check that PostHog is client-side (used to handle Next.js SSR)
 if (typeof window !== "undefined") {
 	posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
@@ -32,8 +34,11 @@ export default function App({ Component, pageProps }) {
 	}, [router.events]);
 
 	return (
-		<PostHogProvider client={posthog}>
-			<Component {...pageProps} />
-		</PostHogProvider>
+		<>
+			<GoogleAnalytics trackPageViews />
+			<PostHogProvider client={posthog}>
+				<Component {...pageProps} />
+			</PostHogProvider>
+		</>
 	);
 }
