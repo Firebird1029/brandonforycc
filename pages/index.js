@@ -54,9 +54,29 @@ export default function Home() {
 	const [posts, setPosts] = useState([]);
 	const [searchPost, setSearchPost] = useState("");
 	const [visiblePanels, setVisiblePanels] = useState([]);
+	const [origOrder, setOrigOrder] = useState([]);
 
 	useEffect(() => {
 		getPosts().then((posts) => {
+			posts
+				.sort((a, b) => (a.post > b.post ? 1 : -1))
+				// .sort((a, b) => (a.upvotes > b.upvotes ? -1 : 1))
+				.sort((a, b) => {
+					if (a.ls_upvoted !== b.ls_upvoted) {
+						return a.ls_upvoted ? -1 : 1;
+					}
+					if (a.upvotes === b.upvotes) {
+						return 0;
+					}
+					if (a.upvotes === undefined) {
+						return 1;
+					}
+					if (b.upvotes === undefined) {
+						return -1;
+					}
+					return a.upvotes > b.upvotes ? -1 : 1;
+				});
+			setOrigOrder(posts.map(({ id }) => id));
 			setPosts(posts);
 		});
 	}, []);
@@ -84,6 +104,8 @@ export default function Home() {
 
 		// Refresh
 		getPosts().then((posts) => {
+			// sort by original order
+			posts.sort((a, b) => origOrder.indexOf(a.id) - origOrder.indexOf(b.id));
 			setPosts(posts);
 		});
 	}
@@ -187,7 +209,7 @@ export default function Home() {
 					</div>
 					<div className="hero-foot">
 						<div className="container has-text-centered">
-							<div className="buttons mb-5 justify-center are-medium">
+							<div className="buttons mb-5 justify-center are-medium px-2">
 								<button
 									className="button is-rounded clickable"
 									onClick={() => platformSectionRef.current.scrollIntoView()}
@@ -461,31 +483,17 @@ export default function Home() {
 											suggestedBy(email).toLowerCase().includes(searchPost.toLowerCase())
 										);
 									})
-									.sort((a, b) => (a.post > b.post ? 1 : -1))
-									// .sort((a, b) => (a.upvotes > b.upvotes ? -1 : 1))
-									.sort((a, b) => {
-										if (a.ls_upvoted !== b.ls_upvoted) {
-											return a.ls_upvoted ? -1 : 1;
-										}
-										if (a.upvotes === b.upvotes) {
-											return 0;
-										}
-										if (a.upvotes === undefined) {
-											return 1;
-										}
-										if (b.upvotes === undefined) {
-											return -1;
-										}
-										return a.upvotes > b.upvotes ? -1 : 1;
-									})
+
 									.map(({ id, post, upvotes, email, ls_upvoted }) => (
 										<div
 											key={id}
-											className={`box ${ls_upvoted ? "has-background-success-light" : ""}`}
+											className={`box mx-2 my-4 ${
+												ls_upvoted ? "has-background-success-light" : ""
+											}`}
 										>
-											<div className="level mb-1">
-												<div className="level-left">{post}</div>
-												<div className="level-right">
+											<div className="columns">
+												<div className="column is-8 pb-0">{post}</div>
+												<div className="column is-4 has-text-right-tablet pb-0">
 													{!ls_upvoted && (
 														<button
 															className="button is-success"
