@@ -135,10 +135,15 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
-				<section className="hero is-fullheight">
+				<section
+					className="hero is-fullheight"
+					style={{
+						background: "linear-gradient(150deg, #fff, rgba(0, 50, 255, 0.4))",
+					}}
+				>
 					<div className="hero-head">
 						<div className="container grid grid-col-3 z-10">
-							<div className="col-start-2">
+							<div className="col-start-2 col-end-2">
 								<Image
 									src="/VoteYeeBlue.svg"
 									width={524}
@@ -180,13 +185,13 @@ export default function Home() {
 						<div className="container has-text-centered">
 							<div className="buttons mb-5 justify-center are-medium">
 								<button
-									className="button is-dark is-rounded"
+									className="button is-rounded clickable"
 									onClick={() => platformSectionRef.current.scrollIntoView()}
 								>
 									Platform
 								</button>
 								<button
-									className="button is-primary is-rounded"
+									className="button is-rounded clickable"
 									onClick={() => voteSectionRef.current.scrollIntoView()}
 								>
 									Vote for event ideas!
@@ -196,38 +201,49 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className="section" ref={platformSectionRef}>
-					<h1 className="title">About Me</h1>
-					<p>
-						Hi! My name is Brandon Yee and I am a sophomore in Davenport College. I&apos;m running for YCC
+				<section className="section mx-1 md:mx-24 xl:mx-72 2xl:mx-84" ref={platformSectionRef}>
+					<h1 className="title">Hello there!</h1>
+					<p className="pb-3">
+						My name is Brandon Yee and I am a sophomore in Davenport College. I&apos;m running for YCC
 						Events Director with a mission to uphold and revitalize cherished Yale traditions while
-						fostering new ones. I&apos;m running for the position of Events Director because I&apos;m
-						passionate about creating engaging and enjoyable experiences for our student body. I believe
-						that a well-planned and executed event can have a positive impact on our school community and
-						help us build strong connections with one another. As Events Director, I will work closely with
-						other student government members and event coordinators to plan events that cater to a diverse
-						range of interests and needs. My experience in event planning and management, both within and
-						outside of student government, has equipped me with the necessary skills to handle the logistics
-						of organizing events, from securing venues to coordinating with vendors and volunteers. I am
-						confident in my ability to create events that are not only fun and entertaining but also
-						meaningful and impactful. I am excited about the opportunity to serve as your Events Director
-						and bring exciting events to our school community. If you have any questions or suggestions,
-						please don&apos;t hesitate to reach out to me. Thank you for your consideration!
+						fostering new ones. I&apos;m passionate about creating engaging and enjoyable experiences for
+						our student body. I believe that a well-planned and executed event can have a positive impact on
+						our school community and help us build strong connections with one another.
+					</p>
+					<p className="pb-3">
+						As Events Director, I will work closely with other student government members and event
+						coordinators to plan events that cater to a diverse range of interests and needs. My experience
+						in event planning and management, both within and outside of student government, has equipped me
+						with the necessary skills to handle the logistics of organizing events, from securing venues to
+						coordinating with vendors and volunteers. I am confident in my ability to create events that are
+						not only fun and entertaining but also meaningful and impactful.
+					</p>
+					<p className="pb-3">
+						My YCC background (as senator for two years) has equipped me with the knowledge and skills to
+						navigate the YCC&apos;s intricacies, expediting the execution of ideas and increasing the
+						frequency of student events throughout the year. My experience outside of YCC, specifically
+						serving on the board of YHack, Yale&apos;s largest annual hackathon, has granted me invaluable
+						insights into planning large-scale events. This expertise, combined with my YCC senatorial
+						experience, has given me a comprehensive understanding of event programming and logistics.
+					</p>
+					<p>
+						I am excited about the opportunity to serve as your Events Director and bring exciting events to
+						our school community. Here&apos;s to an unforgettable Yale.
 					</p>
 				</section>
 				<section className="section">
 					<h1 className="title font-sans">My Platform</h1>
 					<div className="columns is-multiline">
 						<div className="column is-6">
-							<Accordion akey={1} title={"Greater Engagement"}>
+							<Accordion akey={1} title={"Greater Student Engagement"}>
 								<p>
 									One of my top priorities is to increase student engagement and participation in
 									campus activities. To achieve this, I will make it a point to reach out to students
 									who have not traditionally attended YCC events. I recognize that there are many
 									students on campus who may not feel that YCC events are relevant or interesting to
 									them. However, I believe that by identifying successful events from the past, like
-									Agastya&apos;s Night at the Museum, we can create new opportunities to bring in
-									non-traditional attendees.
+									Night at the Museum, we can create new opportunities to bring in non-traditional
+									attendees.
 								</p>
 								<p>
 									To do this, I will work closely with student organizations and clubs to co-sponsor
@@ -247,19 +263,19 @@ export default function Home() {
 								<p>
 									While big events like concerts and comedy shows are important, smaller arts events
 									often go unnoticed, despite being just as important and impactful. One way to
-									promote smaller arts events is by continuing Agastya&apos;s Campus Buzz, a weekly
-									email that promotes upcoming events happening on campus. This is a great way to
-									reach a wide audience and ensure that all students are aware of the different
-									artistic events happening around them.
+									promote smaller arts events is by continuing the Campus Buzz, a weekly email that
+									promotes upcoming events happening on campus. This is a great way to reach a wide
+									audience and ensure that all students are aware of the different artistic events
+									happening around them.
 								</p>
 								<p>
 									In addition to Campus Buzz, I propose creating a dedicated page on the YCC website
 									that highlights smaller arts events happening on campus. This page could feature
-									information on upcoming events, as well as reviews and testimonials from students
-									who have attended these events in the past. Another idea is to collaborate with
-									student organizations and clubs to co-sponsor smaller arts events. By working
-									together, we can pool resources and create more engaging and impactful events that
-									showcase the artistic talents of our student body.
+									information on upcoming events, as well as positive reviews from students who have
+									attended these events in the past. Another idea is to collaborate with student
+									organizations and clubs to co-sponsor smaller arts events. By working together, we
+									can pool resources and create more engaging and impactful events that showcase the
+									artistic talents of our student body.
 								</p>
 								<p>
 									I also propose hosting a student art exhibit, where students can showcase their
@@ -298,16 +314,15 @@ export default function Home() {
 								<p>
 									Regarding Spring Fling, it&apos;s important that students have a say in Spring Fling
 									because it is one of the biggest and most highly anticipated events of the year.
-									This music concert on Old Campus takes place at the end of each school year and is a
-									chance for students to come together and celebrate the end of the academic year. By
-									giving students a say in the selection of Spring Fling artists, we are allowing them
-									to have a direct impact on the event and ensure that it reflects their tastes and
-									preferences. This not only increases student engagement and excitement leading up to
-									the event, but also helps to create a sense of ownership and pride in the event
-									itself. Furthermore, by involving students in the selection process, we can help to
-									create a more diverse and inclusive lineup of artists. This ensures that all
-									students feel represented and included, regardless of their musical tastes or
-									backgrounds.
+									This music concert is a chance for students to come together and celebrate the end
+									of the academic year. By giving students a say in the selection of Spring Fling
+									artists, we are allowing them to have a direct impact on the event and ensure that
+									it reflects their tastes and preferences. This not only increases student engagement
+									and excitement leading up to the event, but also helps to create a sense of
+									ownership and pride in the event itself. Furthermore, by involving students in the
+									selection process, we can help to create a more diverse and inclusive lineup of
+									artists. This ensures that all students feel represented and included, regardless of
+									their musical tastes or backgrounds.
 								</p>
 							</Accordion>
 						</div>
@@ -394,15 +409,15 @@ export default function Home() {
 									memory remains up-to-date and relevant.
 								</p>
 								<p>
-									I&apos;m currently working closely with the current Events Director, Agastya, to
-									archive his work and ensure that his efforts are not lost. Agastya has done an
-									incredible job of reintroducing lost traditions and events during the COVID-19
-									pandemic, and I believe that his work is an important part of our institutional
-									memory. Overall, I believe that focusing on archiving the previous work of YCC
-									members is a crucial step towards preserving our institutional memory and building a
-									strong foundation for future work. If elected as the Events Director, I&apos;m
-									committed to making this happen and ensuring that our campus community continues to
-									benefit from the hard work and dedication of YCC members both past and present.
+									I&apos;m currently working with the current Events Director, Agastya, to archive his
+									work and ensure that his efforts are not lost. His team has done an incredible job
+									of reintroducing lost traditions and events after the COVID-19 pandemic, and I
+									believe that their work is an important part of our institutional memory. Overall, I
+									believe that focusing on archiving the previous work of YCC members is a crucial
+									step towards preserving our institutional memory and building a strong foundation
+									for future work. If elected as the Events Director, I&apos;m committed to making
+									this happen and ensuring that our campus community continues to benefit from the
+									hard work and dedication of YCC members both past and present.
 								</p>
 							</Accordion>
 						</div>

@@ -9,7 +9,7 @@ html {
 }
 
 body {
-	background: linear-gradient(150deg, #fff, rgba(0, 50, 255, 0.4));
+	/* background: linear-gradient(150deg, #fff, rgba(0, 50, 255, 0.4)); */
 }
 
 @layer components {
@@ -19,6 +19,20 @@ body {
 
 	p {
 		@apply text-xl;
+	}
+
+	.clickable {
+		@apply bg-title-blue1 text-white;
+		transition: background-color 0.2s;
+	}
+
+	.clickable:hover {
+		@apply bg-title-blue2 text-white;
+	}
+
+	.clickable:active,
+	.clickable:focus {
+		@apply text-white;
 	}
 }
 
