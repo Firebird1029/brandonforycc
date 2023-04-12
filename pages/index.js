@@ -220,7 +220,7 @@ export default function Home() {
 									className="button is-rounded clickable"
 									onClick={() => voteSectionRef.current.scrollIntoView()}
 								>
-									Vote for event ideas!
+									Vote on event ideas!
 								</button>
 							</div>
 						</div>
@@ -515,7 +515,7 @@ export default function Home() {
 							<br />
 							<p>
 								If elected, the highest-voted events will be prioritized next year (within YCC&apos;s
-								resources). Encourage your friends to visit this page and upvote the best ideas!
+								resources). Tell your friends to visit this page and upvote the best ideas!
 							</p>
 							<br />
 							<a
